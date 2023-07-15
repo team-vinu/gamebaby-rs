@@ -1,0 +1,37 @@
+[package]
+name = "gamebaby"
+edition = "2021"
+version.workspace = true
+authors.workspace = true
+
+[workspace.package]
+version = "0.1.0"
+authors = ["Satsuki Akiba <anosatsuk124@gmail.com>", "Kosuke Yamamoto <kosuke.fukasawa@gmail.com>"]
+
+[workspace]
+default-members = [
+    "clients/rusty-native"
+]
+members = [
+    "clients/rusty-native"
+]
+
+[features]
+default = []
+std = []
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[profile.release]
+lto = true
+
+[workspace.dependencies]
+log = "0.4.19"
+
+[dependencies]
+log = { workspace = true }
+bitflags = "2.3.3"
+anyhow = { version = "1.0.71", default-features = false }
+once_cell = { version = "1.18.0", default-features = false }
+educe = "0.4.22"
