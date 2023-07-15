@@ -10,9 +10,11 @@ authors = ["Satsuki Akiba <anosatsuk124@gmail.com>", "Kosuke Yamamoto <kosuke.fu
 
 [workspace]
 default-members = [
+    "./",
     "clients/rusty-native"
 ]
 members = [
+    "./",
     "clients/rusty-native"
 ]
 
