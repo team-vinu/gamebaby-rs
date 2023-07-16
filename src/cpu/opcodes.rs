@@ -1,3 +1,17 @@
+use super::registers::RegisterTrait;
+use anyhow::Result;
+
+// TODO: Implement OpCodeTrait for all opcodes
+pub trait OpCodeTrait {
+    fn execute(&self) -> Result<()>;
+}
+
+enum OpCodeValue<'a> {
+    ImmediateByte(u8),
+    ImmediateWord(u16),
+    Register(&'a dyn RegisterTrait),
+}
+
 /*
  * ## Pan Docs
 
@@ -169,7 +183,6 @@ pub enum OpCode {
     Ldi_A_HL,
     Ldd_HL_A,
     Ldd_A_HL,
-
     Ld_RR_NN(u16),
     Ld_NN_SP(u16),
     Ld_SP_HL,

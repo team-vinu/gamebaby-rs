@@ -2,6 +2,12 @@ use anyhow::{anyhow, Result};
 use bitflags::bitflags;
 use educe::Educe;
 
+// TODO: Implement RegisterTrait for all registers
+pub trait RegisterTrait {
+    fn get(&self) -> u8;
+    fn set(&mut self, value: u8);
+}
+
 /// Registers
 #[derive(Debug, Default)]
 pub struct Registers {
