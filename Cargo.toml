@@ -2,7 +2,19 @@
 name = "z80-common"
 version = "0.1.0"
 edition = "2021"
+authors = ["Satsuki Akiba <anosatsuk124@gmail.com>"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+default = []
+std = []
+
+[lib]
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[workspace]
+members = [
+  "crates/macros",
+]
 
 [dependencies]
+macros = { path = "crates/macros" }
