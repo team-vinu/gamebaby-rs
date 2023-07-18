@@ -1,0 +1,20 @@
+[package]
+name = "z80-common"
+version = "0.1.0"
+edition = "2021"
+authors = ["Satsuki Akiba <anosatsuk124@gmail.com>"]
+
+[features]
+default = []
+std = []
+
+[lib]
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[workspace]
+members = [
+  "crates/macros",
+]
+
+[dependencies]
+macros = { path = "crates/macros" }
