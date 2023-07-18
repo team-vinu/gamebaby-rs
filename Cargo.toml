@@ -21,6 +21,7 @@ members = [
 [features]
 default = []
 std = []
+c-api = []
 
 [lib]
 crate-type = ["cdylib", "staticlib"]
